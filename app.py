@@ -9,7 +9,7 @@ st.set_page_config(page_title="Navigator - Discharge Planning Assistant", page_i
 
 # Sidebar and logo
 with st.sidebar:
-    st.image("ss_logo.jpg", width=200)  # Replace with your actual logo filename
+    st.image("ss_logo.jp2", width=200)  # Replace with your actual logo filename
     st.markdown("---")
     if st.button("New Conversation", use_container_width=True):
         st.session_state.messages = []
