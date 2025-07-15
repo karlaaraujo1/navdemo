@@ -5,7 +5,7 @@ from PIL import Image
 import time
 
 # App config
-st.set_page_config(page_title="Navigator - Discharge Planning Assistant", page_icon="🏥", layout="wide")
+st.set_page_config(page_title="Luma - SilverStay Complex Case Assistant", page_icon="🏥", layout="wide")
 
 # Sidebar and logo
 with st.sidebar:
@@ -15,16 +15,13 @@ with st.sidebar:
         st.session_state.messages = []
         st.rerun()
     st.markdown("### About")
-    st.markdown("Navigator compresses time and keeps teams focused, like working alongside a master discharge planner who's seen 10,000 cases.")
+    st.markdown("Luma compresses time and keeps teams focused, like working alongside a master discharge planner who's seen 10,000 cases.")
 
 # Example prompt buttons
 st.subheader("Example questions:")
 examples = [
-    "Patient with dementia and elopement risk cannot return to prior home and has unclear finances.",
-    "Patient with encephalopathy and aggressive behavior needs adult day program but faces dual denial of level of care.",
-    "Patient under guardianship needs ALF placement near Baltimore County, but options are cost-restrictive.",
-    "Patient discharging to shelter needs follow-up support but lacks stable housing.",
-    "Patient remains in ED under outpatient status but family refuses all discharge options including LTC, ALF, and home."
+    "60 y/o woman with advanced dementia, no family, facility won’t take her back, Medicaid pending. What should I do today?",
+    "Patient is homeless, refuses SNF, has Medicaid, needs wound care. Any ideas for placement and next steps?",
 ]
 
 cols = st.columns(3)
@@ -44,7 +41,7 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 # Chat input
-if prompt := st.chat_input("Ask Navigator about discharge planning...") or st.session_state.prefill:
+if prompt := st.chat_input("Ask Luma about a complex case...") or st.session_state.prefill:
     if st.session_state.prefill:
         prompt = st.session_state.prefill
         st.session_state.prefill = ""
@@ -55,9 +52,9 @@ if prompt := st.chat_input("Ask Navigator about discharge planning...") or st.se
 
     with st.chat_message("assistant"):
         placeholder = st.empty()
-        with st.spinner("Navigator is thinking..."):
+        with st.spinner("Luma is thinking..."):
 
-            url = "https://silverstay-langflow.predictionguard.com/api/v1/run/e24d54a5-f854-4dee-9f94-e68d9455f5f1"
+            url = "https://silverstay-langflow.predictionguard.com/api/v1/run/6f80b5ff-2b47-4d6c-a275-d2d1e190630c"
             api_key = os.environ.get("LANGFLOW_API_KEY")
 
             if not api_key:
