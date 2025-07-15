@@ -1,4 +1,4 @@
-# Navigator - Discharge Planning Assistant
+# Luma - Complex Case Assistant
 
 A Streamlit-based AI chat application that provides expert guidance for healthcare discharge planning scenarios. Built with Langflow integration for intelligent responses to complex patient cases.
 
@@ -144,4 +144,4 @@ For technical support or questions about the Navigator discharge planning assist
 
 ---
 
-**Navigator** - Compressing time and keeping teams focused, like working alongside a master discharge planner who's seen 10,000 cases. 
+**Luma** - Compressing time and keeping teams focused, like working alongside a master discharge planner who's seen 10,000 cases. 
